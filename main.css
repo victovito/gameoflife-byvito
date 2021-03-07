@@ -1,0 +1,77 @@
+html, body {
+    margin: 0px;
+    overflow: hidden;
+    position: absolute;
+}
+.button {
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    margin-bottom: 20px;
+}
+.text {
+    position: absolute;
+    color: gray;
+    font-weight: lighter;
+    user-select: none;
+    user-select: none;
+}
+#dbcanvas {
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+}
+.structures {
+    position: absolute;
+    left: 50%;
+    outline-style: outset;
+    outline-width: 3px;
+    outline-color: #ffffff33;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: black;
+}
+.structures::-webkit-scrollbar-track{
+    border: transparent;
+    background-color: transparent;
+}
+.structures::-webkit-scrollbar{
+    height: 10px;
+}
+.structures::-webkit-scrollbar-thumb{
+    background-color: #ffffff33;
+}
+.structures-min-button{
+    position: absolute;
+    left: 50%;
+    z-index: 4;
+    border-color: transparent;
+    color: #fff;
+    background-color: #ffffff33;
+    user-select: none;
+    outline: none;
+    box-shadow: none;
+}
+.structureButton {
+    display: inline;
+    background-color: transparent;
+    outline-color: transparent;
+    border-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.structure-info {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 3;
+    user-select: none;
+}
