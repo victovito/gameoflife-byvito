@@ -106,20 +106,36 @@ class Structures
             path: "./structures/ship119P4H1V0.bmp",
             loaded: false
         },
-        frothingpuffer: {
-            name: "Frothing Puffer",
-            description: "A medium-sized spaceship that moves in a orthogonal direction.",
-            data: null,
-            img: null,
-            path: "./structures/frothingpuffer.bmp",
-            loaded: false
-        },
         ship295P5H1V1: {
             name: "Ship 295P5H1V1",
             description: "A big-sized spaceship that moves in a diagonal direction.",
             data: null,
             img: null,
             path: "./structures/ship295P5H1V1.bmp",
+            loaded: false
+        },
+        frothingpuffer: {
+            name: "Frothing Puffer",
+            description: "A medium-sized puffer train that moves in a orthogonal direction.",
+            data: null,
+            img: null,
+            path: "./structures/frothingpuffer.bmp",
+            loaded: false
+        },
+        dirtypuffer: {
+            name: "Dirty Puffer",
+            description: "A big-sized puffer train that moves in a orthogonal direction.",
+            data: null,
+            img: null,
+            path: "./structures/dirtypuffer.bmp",
+            loaded: false
+        },
+        glidergungeneratorship: {
+            name: "Glider Gun Generator Ship",
+            description: "A big-sized puffer train that moves in a orthogonal direction.",
+            data: null,
+            img: null,
+            path: "./structures/glidergungeneratorship.bmp",
             loaded: false
         },
         sierpinski: {
