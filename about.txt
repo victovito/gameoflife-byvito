@@ -16,9 +16,10 @@ For dead cells:
 <hr>
 Controlls:
 
-    Left Click: Add a living cell || Place a structure.
-    Right Click: Add a dead cell || Cancel structure placement.
+    Left Click: Turns a cell into a living cell || Place a structure.
+    Right Click: Turns a cell into a dead cell || Cancel structure placement.
     Middle Click: Moves the camera.
+    Scroll: Increases or decreases zoom.
     Space: Change structure rotation.
 
 <hr>
