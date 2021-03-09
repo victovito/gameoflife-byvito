@@ -72,6 +72,6 @@ html, body {
     border-radius: 6px;
     padding: 5px 0;
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     user-select: none;
 }

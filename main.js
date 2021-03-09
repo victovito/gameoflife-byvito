@@ -26,6 +26,8 @@ function start(){
     
     Hud.createHud();
 
+    About.setAbout();
+
     requestAnimationFrame(update);
 
 }

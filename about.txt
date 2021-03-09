@@ -1,0 +1,25 @@
+<hr>
+<p style="text-align: center; margin-top: 0px; margin-bottom: 0px"> Game of Life </p>
+
+    The Game of Life is a zero-player game created by John Conway. The game consists on an infinite grid where it's cells can be either alive or dead. Each cell follows a set of rules:
+
+For living cells:
+    - If the cell has 2 or 3 living neighbors, it stays alive in the next generation.
+    - If the cell has only 1 living neighbor, it dies from isolation in the next generation.
+    - If the cell has 4 or more living neighbor, it dies from overpopulation in the next generation.
+
+For dead cells:
+    - If the cell has exactly 3 living neighbors, it becomes alive in the next generation.
+
+    Only this set of rules are enough to create complex and impressive patterns.
+
+<hr>
+Controlls:
+
+    Left Click: Add a living cell || Place a structure.
+    Right Click: Add a dead cell || Cancel structure placement.
+    Middle Click: Moves the camera.
+    Space: Change structure rotation.
+
+<hr>
+<p style="text-align: right; margin-bottom: 0px;">by Vito</p>

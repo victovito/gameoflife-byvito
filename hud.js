@@ -86,6 +86,7 @@ class Hud
         structuresDiv.style.width = `${this.structuresDivSize[0]}px`;
         structuresDiv.style.height = `${this.structuresDivSize[1]}px`;
         structuresDiv.style.marginLeft = `${-this.structuresDivSize[0] / 2}px`;
+        structuresDiv.addEventListener("wheel", Hud.scrollStructures);
         document.body.append(structuresDiv);
         this.structuresDiv = structuresDiv;
         
@@ -160,6 +161,7 @@ class Hud
             structureButton.onmouseout = () => {
                 this.hideStructureInfo();
             };
+            structureButton.addEventListener("wheel", Hud.scrollStructures);
 
             structuresDiv.append(structureButton);
         }
@@ -290,6 +292,11 @@ class Hud
         }, 2000);
 
         this.calcTimeDebug.innerHTML = `${value}ms`;
+    }
+
+    static scrollStructures(e){
+        e.preventDefault();
+        document.getElementById("structures-div").scrollLeft += e.deltaY / 5;
     }
 
 }
