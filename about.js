@@ -3,7 +3,7 @@ class About
 
     static text = "";
 
-    static setAbout(color = "#ffffff"){
+    static setAbout(side = "left", color = "#ffffff"){
         const req = new XMLHttpRequest();
         req.open("get", "./about.txt", true);
         req.onload = function(){
@@ -11,17 +11,21 @@ class About
                 console.error(req.response);
             } else {
                 About.text = req.response;
-                About.setElements(color);
+                About.setElements(side, color);
             }
         }
         req.send();
     }
 
-    static setElements(color){
+    static setElements(side, color){
         let aboutIcon = document.createElement("div");
         aboutIcon.style.position = "absolute";
         aboutIcon.style.top = "10px";
-        aboutIcon.style.left = "10px";
+        if (side == "left"){
+            aboutIcon.style.left = "10px";
+        } else {
+            aboutIcon.style.right = "10px";
+        }
         aboutIcon.style.width = "30px";
         aboutIcon.style.height = "30px";
         aboutIcon.style.textAlign = "center";
@@ -30,15 +34,21 @@ class About
         aboutIcon.style.fontSize = "24px";
         aboutIcon.innerHTML = "?";
         aboutIcon.style.userSelect = "none";
+        aboutIcon.style.zIndex = "10";
         document.body.append(aboutIcon);
         
         let aboutDiv = document.createElement("div");
         aboutDiv.style.visibility = "hidden";
         aboutDiv.style.position = "absolute";
         aboutDiv.style.top = "10px";
-        aboutDiv.style.left = "50px";
+        if (side == "left"){
+            aboutDiv.style.left = "50px";
+        } else {
+            aboutDiv.style.right = "50px";
+        }
         aboutDiv.style.width = "fit-content";
-        aboutDiv.style.backgroundColor = "#000";
+        aboutDiv.style.backgroundColor = "transparent";
+        aboutDiv.style.backdropFilter = "blur(.5cm) saturate(0%) brightness(25%)";
         aboutDiv.style.borderRadius = "6px";
         aboutDiv.style.zIndex = "10";
         aboutIcon.append(aboutDiv);
@@ -47,7 +57,7 @@ class About
         text.style.whiteSpace = "pre-wrap"
         text.style.width = "max-content";
         text.style.maxWidth = "500px";
-        text.style.textAlign = "left";
+        text.style.textAlign = "justify";
         text.style.verticalAlign = "middle";
         text.style.color = "#fff";
         text.style.fontSize = "14px";

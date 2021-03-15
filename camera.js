@@ -40,15 +40,15 @@ class Camera
     drawBackground(){
         ctx.beginPath();
         ctx.fillStyle = this.backgroundColor;
-        ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
     drawGrid(){
         if (this.size > 0.2){
             return;
         }
-        let width = Math.ceil(this.screenLengthToWorldLength(window.innerWidth)) + 1;
-        let height = Math.ceil(this.screenLengthToWorldLength(window.innerHeight)) + 1;
+        let width = Math.ceil(this.screenLengthToWorldLength(canvas.width)) + 1;
+        let height = Math.ceil(this.screenLengthToWorldLength(canvas.height)) + 1;
         let size = this.worldLengthToScreenLength(1);
         let cornerSquare = this.worldPosToScreenPoint(this.screenPointToWorldPos(new Vector2()).floor());
         ctx.beginPath();
@@ -66,7 +66,6 @@ class Camera
     }
 
     drawQuadTreeLevel(quad){
-        let size = this.worldLengthToScreenLength(quad.size);
         ctx.strokeStyle = "#444444";
 
         let verts = [
@@ -120,8 +119,18 @@ class Camera
 
     }
 
+    saveScreenshot(){
+        const link = document.createElement('a');
+        link.download = 'screenshot.png';
+        canvas.width = 1920; canvas.height = 1080; camera.draw();
+        link.href = canvas.toDataURL();
+        canvasFitScreen();
+        link.click();
+        link.delete;
+    }
+
     draw(){
-        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         this.drawBackground();
         if (this.config.drawGrid) this.drawGrid();
         if (this.config.drawQuadTree) world.data.drawQuadTree();

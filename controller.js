@@ -112,6 +112,13 @@ class Controller
             this.m2 = null;
             this.m3 = null;
         });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.code == "F2"){
+                camera.saveScreenshot();
+            }
+        });
+
     }
 
 }

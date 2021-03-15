@@ -36,7 +36,7 @@ class Vector2
     }
 
     static screenCenter(){
-        return new Vector2(window.innerWidth/2, window.innerHeight/2);
+        return new Vector2(canvas.width/2, canvas.height/2);
     }
 
     static zero(){
